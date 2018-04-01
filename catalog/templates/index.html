@@ -8,7 +8,7 @@
 
       {% for hdd in hdd_list %}
       <li>
-          {{hdd.name }} : <a href="{{hdd.get_update_url}}">{{hdd.borrower}}</a> 
+          {{hdd.name }} : <a href="{{hdd.get_update_url}}">{{hdd.borrower}} ({{hdd.date}})</a> 
       </li>
       {% endfor %}
 

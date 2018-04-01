@@ -10,6 +10,7 @@ class Hdd(models.Model):
     """
     name = models.CharField(max_length=200)
     borrower = models.CharField(max_length=200)
+    date = models.DateField(null=True, blank=True)
     
     # Foreign Key used because book can only have one author, but authors can have multiple books
     # Author as a string rather than object because it hasn't been declared yet in the file.
@@ -34,3 +35,6 @@ class Hdd(models.Model):
         Returns the url to access a detail record for this book.
         """
         return reverse('hdd_update', args=[str(self.id)])    
+    
+    class Meta:
+        ordering = ['name']    
