@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>HDD Holders</h1>
+
+    {% if hdd_list %}
+    <ul>
+
+      {% for hdd in hdd_list %}
+      <li>
+          {{hdd.name }} : <a href="{{hdd.get_update_url}}">{{hdd.borrower}}</a> 
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no hdds in the library.</p>
+    {% endif %}       
+{% endblock %}
