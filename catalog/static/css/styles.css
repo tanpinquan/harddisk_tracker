@@ -15,5 +15,10 @@ ul {
 table {
 
     font-size: large;
+    border-collapse:separate; 
+    border-spacing: 1em;
+}
 
+input{
+    font-size: large;
 }
