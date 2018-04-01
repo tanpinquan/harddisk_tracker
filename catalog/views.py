@@ -6,6 +6,8 @@ from django.views import generic
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .models import Hdd
+from .models import Facility
+
 import datetime
     
 def index(request):
@@ -43,3 +45,13 @@ class HddUpdate(UpdateView):
     fields = ['borrower','date']
     initial={'date':datetime.date.today()}
     success_url = reverse_lazy('index')
+    
+    
+class FacilityListView(generic.ListView):
+    model = Facility
+
+class FacilityUpdate(UpdateView):
+    model = Facility
+    fields = ['user','date']
+    initial={'date':datetime.date.today()}
+    success_url = reverse_lazy('facility')    

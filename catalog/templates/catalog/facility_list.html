@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Facilities</h1>
+
+    {% if facility_list %}
+    <ul>
+
+      {% for facility in facility_list %}
+      <li>
+          {{facility.name }} : <a href="{{facility.get_update_url}}">{{facility.user}} ({{facility.date}})</a> 
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no facility in the library.</p>
+    {% endif %}       
+{% endblock %}
